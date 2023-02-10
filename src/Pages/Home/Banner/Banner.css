@@ -1,0 +1,9 @@
+.banner1 {
+  position: relative;
+  /* background: linear-gradient(#000000b3, #000000ab); */
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: rgba(38, 35, 35, 0.9);
+  height: 90vh;
+}
