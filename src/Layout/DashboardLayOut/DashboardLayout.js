@@ -23,6 +23,9 @@ const DashboardLayout = () => {
           <ul className="menu  w-80 bg-base-100 text-base-content">
             <ul className="menu bg-black text-white p-4 w-80 h-full  font-bold ">
               <li className="hover:bg-red-900">
+                <Link to="/deshboard">Profile</Link>
+              </li>
+              <li className="hover:bg-red-900">
                 <Link to="/deshboard/addProducts">Add-Products</Link>
               </li>
               <li className="hover:bg-red-900">

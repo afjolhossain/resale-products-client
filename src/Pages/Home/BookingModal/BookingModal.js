@@ -1,7 +1,17 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthPovider";
-
+import Swal from "sweetalert2";
 const BookingModal = ({ singleProduct }) => {
+  const alert = () => {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Order Placed Successfuly",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
+
   const {
     productName,
     productUsedDiscription,
@@ -29,7 +39,7 @@ const BookingModal = ({ singleProduct }) => {
       phone,
     };
 
-    fetch("http://localhost:5000/booking", {
+    fetch("https://resale-furniture-server-blond.vercel.app/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -39,7 +49,7 @@ const BookingModal = ({ singleProduct }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          alert("Services successfuly Added");
+          alert();
           event.target.reset();
         }
       });

@@ -1,8 +1,18 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthPovider";
+import Swal from "sweetalert2";
 
 const UpdateProfile = () => {
+  const alert = () => {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Your profile has been updated",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
   const { user } = useContext(AuthContext);
   const handleUpdateBtn = (event) => {
     event.preventDefault();
@@ -27,7 +37,7 @@ const UpdateProfile = () => {
       Nationality,
     };
 
-    fetch("http://localhost:5000/profileUpdate", {
+    fetch("https://resale-furniture-server-blond.vercel.app/profileUpdate", {
       method: "POSt",
       headers: {
         "content-type": "application/json",
@@ -37,16 +47,16 @@ const UpdateProfile = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          alert("Profile Update Successfuly");
+          alert();
           event.target.reset();
         }
       });
   };
   return (
-    <div>
+    <div className="lg:w-3/4 md:w-full sm:w-full mx-auto">
       <form
         onSubmit={handleUpdateBtn}
-        className="w-6/12 grid lg:grid-cols-1 sm:grid-cols-1  gap-2 bg-slate-100 shadow-2xl mx-auto p-6 mt-6"
+        className=" grid lg:grid-cols-1 gap-2 bg-slate-100 shadow-2xl mx-auto  mt-6 	"
       >
         <h1 className="text-center uppercase font-bold text-2xl p-4 text-red-700">
           update profile
@@ -103,7 +113,7 @@ const UpdateProfile = () => {
           className="input input-bordered input-primary lg:w-3/4 sm:w-full mx-auto"
         />
 
-        <div className="flex mx-auto items-center justify-center gap-2 lg:flex-nowrap sm:flex-wrap	">
+        <div className="flex mx-auto items-center justify-center gap-2 sm:w-flex-wrap  ">
           <input
             type="submit"
             readOnly

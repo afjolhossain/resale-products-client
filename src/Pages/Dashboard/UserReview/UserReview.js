@@ -1,6 +1,17 @@
 import React from "react";
+import Swal from "sweetalert2";
 
 const UserReview = () => {
+  const alert = () => {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Your review has been added",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
+
   const handleReview = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -14,7 +25,7 @@ const UserReview = () => {
       comment,
       Designation,
     };
-    fetch("http://localhost:5000/review", {
+    fetch("https://resale-furniture-server-blond.vercel.app/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -24,7 +35,7 @@ const UserReview = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          alert("review have done Successfully");
+          alert();
           event.target.reset();
         }
       });

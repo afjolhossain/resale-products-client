@@ -8,7 +8,7 @@ import DashboardLayout from "../../Layout/DashboardLayOut/DashboardLayout";
 import AddProducts from "../../Pages/Dashboard/AddProducts/AddProducts";
 import UserReview from "../../Pages/Dashboard/UserReview/UserReview";
 import SingleProduct from "../../Pages/Home/singleProduct/SingleProduct";
-import Order from "../../Pages/Home/Order/Order";
+
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import MyOrder from "../../Pages/Dashboard/My Order/MyOrder";
 import AllOrders from "../../Pages/Dashboard/AllOrders/AllOrders";
@@ -34,10 +34,7 @@ const router = createBrowserRouter([
         path: "products/:id",
         element: <SingleProduct></SingleProduct>,
       },
-      {
-        path: "/order",
-        element: <Order></Order>,
-      },
+
       {
         path: "/about",
         element: <AboutUs></AboutUs>,

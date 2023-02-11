@@ -1,32 +1,44 @@
 import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 const AllOrders = () => {
   const [allOrders, setAllOrders] = useState([]);
 
+  const alertDelete = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      }
+    });
+  };
+
   useEffect(() => {
-    fetch("http://localhost:5000/booking")
+    fetch("https://resale-furniture-server-blond.vercel.app/booking")
       .then((res) => res.json())
       .then((data) => setAllOrders(data));
   }, []);
 
   const handleDeleteButton = (_id) => {
-    const proceed = window.confirm(
-      "Are you sure? You want to delete this order"
-    );
-    if (proceed) {
-      fetch(`http://localhost:5000/booking/${_id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.deletedCount > 0) {
-            alert("deleted successfully");
-            const remaining = allOrders.filter((odr) => odr._id !== _id);
-            setAllOrders(remaining);
-          }
-        });
-    }
+    fetch(`https://resale-furniture-server-blond.vercel.app/booking/${_id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.deletedCount > 0) {
+          alertDelete();
+          const remaining = allOrders.filter((odr) => odr._id !== _id);
+          setAllOrders(remaining);
+        }
+      });
   };
   return (
     <div>

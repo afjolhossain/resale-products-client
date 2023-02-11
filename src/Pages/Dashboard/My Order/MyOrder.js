@@ -1,36 +1,47 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../contexts/AuthPovider";
-
+import Swal from "sweetalert2";
 const MyOrder = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
 
-  const url = `http://localhost:5000/booking?email=${user?.email}`;
+  const alertDelete = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      }
+    });
+  };
+
+  const url = `https://resale-furniture-server-blond.vercel.app/booking?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setBookings(data));
-  }, [user?.email]);
+  }, [url]);
 
   const handleDeleteButton = (_id) => {
-    const proceed = window.confirm(
-      "Are you sure? You want to delete this order"
-    );
-    if (proceed) {
-      fetch(`http://localhost:5000/booking/${_id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.deletedCount > 0) {
-            alert("deleted successfully");
-            const remaining = bookings.filter((odr) => odr._id !== _id);
-            setBookings(remaining);
-          }
-        });
-    }
+    fetch(`https://resale-furniture-server-blond.vercel.app/booking/${_id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.deletedCount > 0) {
+          alertDelete();
+          const remaining = bookings.filter((odr) => odr._id !== _id);
+          setBookings(remaining);
+        }
+      });
   };
   return (
     <div>

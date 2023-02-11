@@ -1,6 +1,17 @@
 import React from "react";
+import Swal from "sweetalert2";
 
 const AddProducts = () => {
+  const alert = () => {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Your product has been added",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
+
   const handleAddProducts = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -20,7 +31,7 @@ const AddProducts = () => {
       productImageLink,
     };
 
-    fetch("http://localhost:5000/products", {
+    fetch("https://resale-furniture-server-blond.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -30,7 +41,7 @@ const AddProducts = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          alert("Services successfuly Added");
+          alert();
           e.target.reset();
         }
       });

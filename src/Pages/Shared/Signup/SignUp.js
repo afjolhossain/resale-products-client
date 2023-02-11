@@ -2,10 +2,21 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import signUpImage from "../../../Assets/Images/login&Singup/Sign up-bro.png";
 import { AuthContext } from "../../../contexts/AuthPovider";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
   const [signUpError, setSignUPError] = useState("");
   const { createUser, signInGoogle, updateUser } = useContext(AuthContext);
+
+  const alert = () => {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "user created successfully",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
 
   const navigate = useNavigate();
 
@@ -23,7 +34,7 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        alert("user created successfully");
+        alert();
         navigate("/");
 
         const userInfo = {
@@ -48,6 +59,7 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        alert();
         navigate("/");
       })
       .catch((error) => {

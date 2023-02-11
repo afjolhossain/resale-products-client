@@ -7,7 +7,7 @@ const SingleProduct = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const url = `http://localhost:5000/products/${id}`;
+    const url = `https://resale-furniture-server-blond.vercel.app/products/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setSingleProduct(data));

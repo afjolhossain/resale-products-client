@@ -8,10 +8,13 @@ const DashBoard = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/profileUpdate?email=${user.email}`, {
-        method: "GET",
-        headers: {},
-      })
+      fetch(
+        `https://resale-furniture-server-blond.vercel.app/profileUpdate?email=${user.email}`,
+        {
+          method: "GET",
+          headers: {},
+        }
+      )
         .then((res) => {
           return res.json();
         })
@@ -31,7 +34,7 @@ const DashBoard = () => {
         WELCOME TO <span className="text-pink-900">DESHBOARD </span>{" "}
       </h1>
 
-      <div className="w-2/4 p-4 mx-auto  shadow-2xl">
+      <div className="lg:w-3/4 md:w-2/4 sm:w-full p-4 mx-auto  shadow-2xl">
         <p></p>
         <div className="text-center">
           {user.photoURL ? (
@@ -61,7 +64,7 @@ const DashBoard = () => {
             {user.displayName}
           </p>
           {upDateProfile.map((profile) => (
-            <div className="text-2xl text-start leading-10 font-bold">
+            <div className="text-2xl text-center mx-auto leading-10 font-bold sm:w-full ">
               <h1>
                 <span className="text-orange-700">Nationality: </span>
                 {profile.Nationality}
