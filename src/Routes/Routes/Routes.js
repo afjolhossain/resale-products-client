@@ -32,7 +32,11 @@ const router = createBrowserRouter([
       },
       {
         path: "products/:id",
-        element: <SingleProduct></SingleProduct>,
+        element: (
+          <PrivateRoute>
+            <SingleProduct></SingleProduct>
+          </PrivateRoute>
+        ),
       },
 
       {
