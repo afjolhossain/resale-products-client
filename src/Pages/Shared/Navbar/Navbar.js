@@ -32,6 +32,12 @@ const Navbar = () => {
       >
         About-us
       </Link>
+      <Link
+        className="ml-3 text-2xl font-bold text-red-700 hover:text-slate-900	blac ease-in"
+        to="/contactus"
+      >
+        Contact-Us
+      </Link>
 
       {user?.uid ? (
         <>

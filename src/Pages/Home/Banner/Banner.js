@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import banner from "../../../Assets/Images/banner.jpg";
 import "./Banner.css";
 
@@ -17,7 +18,7 @@ const Banner = () => {
         <br /> buy & sell used furniture
       </p>
       <button className="rounded-md text-neutral-50 mx-auto w-36 h-10 mt-8 hover:bg-red-600 ease-in duration-300">
-        Discover More
+        <Link to="/about">ABOUT COMPANY</Link>
       </button>
     </div>
   );

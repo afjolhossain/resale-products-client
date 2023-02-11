@@ -8,11 +8,11 @@ import DashboardLayout from "../../Layout/DashboardLayOut/DashboardLayout";
 import AddProducts from "../../Pages/Dashboard/AddProducts/AddProducts";
 import UserReview from "../../Pages/Dashboard/UserReview/UserReview";
 import SingleProduct from "../../Pages/Home/singleProduct/SingleProduct";
-
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import MyOrder from "../../Pages/Dashboard/My Order/MyOrder";
 import AllOrders from "../../Pages/Dashboard/AllOrders/AllOrders";
 import UpdateProfile from "../../Pages/Dashboard/Updateprofile/UpdateProfile";
+import ContactUs from "../../Pages/Contactus/ContactUs";
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../../Layout/Main/Main");
 
@@ -29,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/products",
         element: <Products></Products>,
+      },
+      {
+        path: "/contactus",
+        element: <ContactUs></ContactUs>,
       },
       {
         path: "products/:id",
