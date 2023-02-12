@@ -49,21 +49,21 @@ const Navbar = () => {
           </Link>
           <p className="ml-3 text-2xl text-sky-900">{user.displayName}</p>
           <button
-            className="ml-3 text-2xl font-bold text-rose-900"
+            className="ml-3 mr-5 text-2xl font-bold text-rose-900"
             onClick={handleLogOut}
           >
             Sign out
           </button>
         </>
       ) : (
-        <Link to="/login" className="ml-3 ">
-          <img className="w-10 	" src={userIcon} alt="" />
+        <Link to="/login" className="ml-3 mr-5 ">
+          <img className="w-10" src={userIcon} alt="" />
         </Link>
       )}
     </React.Fragment>
   );
   return (
-    <div className="navbar bg-base-200 flex justify-between">
+    <div className="navbar bg-base-100 flex justify-between">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -89,7 +89,7 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <Link to="/" className=" text-xl font-bold text-red-700">
+        <Link to="/" className=" text-xl font-bold text-red-700 ml-5">
           AFJOLRECO
         </Link>
       </div>

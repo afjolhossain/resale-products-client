@@ -6,7 +6,7 @@ import WhySecondFurniture from "../WhySecondFurniture/WhySecondFurniture";
 
 const Home = () => {
   return (
-    <div>
+    <div className="mx-5">
       <Banner></Banner>
       <Products></Products>
       <WhySecondFurniture></WhySecondFurniture>
