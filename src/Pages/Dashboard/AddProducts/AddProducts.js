@@ -49,56 +49,58 @@ const AddProducts = () => {
   return (
     <div className=" text-center h-full">
       <p className="text-2xl font-bold p-10">Add your used poducts</p>
-      <div className="w-2/4 mx-auto shadow-3xl bg-red-300">
-        <form onSubmit={handleAddProducts}>
+      <div className="">
+        <form
+          onSubmit={handleAddProducts}
+          className="gap-3 grid grid-cols-1 lg:w-5/12 sm:w-full p-4 mx-auto shadow-2xl "
+        >
           <input
             type="text"
             name="productName"
             placeholder="Product Name"
-            className="input w-full mt-4 max-w-xs"
+            className="input input-bordered input-primary w-full "
           />
-          <br />
           <input
             type="text"
             name="productCatagory"
             placeholder="Product-Catagory"
-            className="input mt-4 w-full max-w-xs"
+            className="input input-bordered input-primary w-full "
           />
-          <br />
           <input
             type="text"
             name="productPrice"
             placeholder="Price"
-            className="input mt-4 w-full max-w-xs"
+            className="input input-bordered input-primary w-full "
           />
-          <br />
           <input
             type="text"
             name="productDiscription"
             placeholder="Product discription"
-            className="input mt-4 w-full max-w-xs"
+            className="input input-bordered input-primary w-full "
           />
-          <br />
           <input
             type="text"
             name="productImageLink"
             placeholder="Image Link"
-            className="input mt-4 w-full max-w-xs"
+            className="input input-bordered input-primary w-full "
           />
-          <br />
           <input
             type="text"
             name="productUsedDiscription"
             placeholder="used Description"
-            className="input mt-4 mb-4 w-full max-w-xs"
+            className="input input-bordered input-primary w-full "
           />
-          <br />
-          <button
+          <input
+            type="text"
+            name="productUsedDiscription"
+            placeholder="used Description"
+            className="input input-bordered input-primary w-full "
+          />
+          <input
             type="submit"
-            className="btn btn-primary w-full mb-4 max-w-xs"
-          >
-            Button
-          </button>
+            defaultValue="Submit"
+            className="input input-bordered input-primary w-full bg-pink-700 text-white h-10 rounded hover:bg-black ease-in duration-300"
+          />
         </form>
       </div>
     </div>
