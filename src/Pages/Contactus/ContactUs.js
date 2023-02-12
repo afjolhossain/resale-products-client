@@ -3,7 +3,7 @@ import React from "react";
 const ContactUs = () => {
   return (
     <div>
-      <p className="text-3xl font-bold text-center py-10 ">CONTACT US</p>
+      <p className="text-3xl font-bold text-center mt-10">CONTACT US</p>
       <div className="grid lg:grid-cols-2 sm:grid-cols-1">
         <div className="p-10">
           <div className="form-control">

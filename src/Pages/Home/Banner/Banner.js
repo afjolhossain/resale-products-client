@@ -4,22 +4,44 @@ import banner from "../../../Assets/Images/banner.jpg";
 import "./Banner.css";
 
 const Banner = () => {
-  const bg = {
-    backgroundImage: `url(${banner})`,
-  };
+  // const bg = {
+  //   ,
+  // };
   return (
-    <div style={bg} className="banner1 text-center">
-      <p
-        data-aos="zoom-in-up"
-        data-aos-duration="2000"
-        className="text-6xl pt-48 font-bold text-neutral-50"
-      >
-        The easiest way to
-        <br /> buy & sell used furniture
-      </p>
-      <button className="rounded-md text-neutral-50 mx-auto w-36 h-10 mt-8 hover:bg-red-600 ease-in duration-300">
-        <Link to="/about">ABOUT COMPANY</Link>
-      </button>
+    // <div style={bg} className="banner1 text-center">
+    //   <p
+    //     data-aos="zoom-in-up"
+    //     data-aos-duration="2000"
+    //     className="text-6xl pt-48 font-bold text-neutral-50"
+    //   >
+    //
+    //   </p>
+    //
+    // </div>
+
+    <div
+      className="hero min-h-screen"
+      style={{
+        backgroundImage: `url(${banner})`,
+      }}
+    >
+      <div className="hero-overlay bg-opacity-70"></div>
+      <div className="hero-content text-center text-neutral-content">
+        <div
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
+          className=" font-bold text-neutral-50 max-w-md"
+        >
+          <h1 className="mb-5 text-5xl font-bold">Hello there !!!!</h1>
+          <p className="mb-5 text-4xl">
+            The easiest way to
+            <br /> buy & sell used furniture
+          </p>
+          <button className="rounded-md text-neutral-50 mx-auto w-48 h-10 mt-8 hover:bg-red-600 ease-in duration-300">
+            <Link to="/about">ABOUT COMPANY</Link>
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
