@@ -4,21 +4,7 @@ import banner from "../../../Assets/Images/banner.jpg";
 import "./Banner.css";
 
 const Banner = () => {
-  // const bg = {
-  //   ,
-  // };
   return (
-    // <div style={bg} className="banner1 text-center">
-    //   <p
-    //     data-aos="zoom-in-up"
-    //     data-aos-duration="2000"
-    //     className="text-6xl pt-48 font-bold text-neutral-50"
-    //   >
-    //
-    //   </p>
-    //
-    // </div>
-
     <div
       className="hero min-h-screen"
       style={{
