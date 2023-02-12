@@ -47,9 +47,9 @@ const Navbar = () => {
           >
             Dashboard
           </Link>
-          <p className="ml-3 text-2xl text-sky-900">{user.displayName}</p>
+          <p className="ml-4 text-2xl text-sky-900">{user.displayName}</p>
           <button
-            className="ml-3 text-2xl font-bold text-rose-900"
+            className="mr-5 ml-3 text-2xl font-bold text-rose-900"
             onClick={handleLogOut}
           >
             Sign out
@@ -89,7 +89,7 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <Link to="/" className=" text-xl font-bold text-red-700">
+        <Link to="/" className=" text-xl font-bold text-red-700 ml-6">
           AFJOLRECO
         </Link>
       </div>

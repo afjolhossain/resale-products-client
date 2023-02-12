@@ -10,14 +10,10 @@ const OurStory = () => {
         AfjoDeco is a marketplace that <br /> eliminates the hassle of buying
         and selling furniture
       </p>
-      <div className="hero mt-10">
-        <div className="hero-content flex-col lg:flex-row">
-          <img
-            src={CEO}
-            className="max-w-lg h-[500px] rounded-lg shadow-2xl"
-            alt=""
-          />
-          <div className="p-6">
+      {/* <div className="hero mt-10">
+        <div className="hero-content sm:flex lg:flex-row">
+          <img src={CEO} className="w-2/4 rounded-lg shadow-2xl" alt="" />
+          <div>
             <h1 className="text-3xl font-bold ml-4">Our Story</h1>
             <p className="leading-7 p-4">
               AfjoDeco stemmed out of frustration and necessity—buying and
@@ -41,6 +37,42 @@ const OurStory = () => {
               goes to the landfill every year. Let’s change that. —
             </p>
             <p className="mt-4 ml-4">Reham Fagiri, Co-Founder & CEO</p>
+          </div>
+        </div>
+      </div> */}
+      <div className="hero min-h-screen ">
+        <div className="hero-content flex-col lg:flex-row">
+          {/* <img src="/images/stock/photo-1635805737707-575885ab0820.jpg" className="max-w-sm rounded-lg shadow-2xl" /> */}
+          <img
+            src={CEO}
+            className="lg:w-2/4 sm:3/4 rounded-lg shadow-2xl"
+            alt=""
+          />
+          <div className="mx-auto p-8">
+            <h1 className="text-5xl font-bold">Our Story</h1>
+            <p className="leading-7 mt-4 ">
+              AfjoDeco stemmed out of frustration and necessity—buying and
+              selling used furniture online more often than not leads to scams,
+              delivery hassles and awkward encounters.
+            </p>
+            <p>
+              After graduating from business school, I packed a moving truck and
+              headed to NYC. At the same time, my co-founder, Kalam Dennis, was
+              having trouble selling his couch because people wanted it
+              delivered. So he borrowed my moving truck to see if including
+              delivery would speed up the sale. After including delivery the
+              sale took less than a day. And thus, AfjoDeco was born.
+            </p>
+            <p>
+              What started in NYC in 2014 has since grown into a much larger
+              operation. We recently expanded to the west coast and added new
+              locations in the Northeast, with more to come! We believe buying
+              and selling furniture shouldn’t be difficult. We’re also big on
+              being kind to the environment. Over 12 million tons of furniture
+              goes to the landfill every year. Let’s change that. —
+            </p>
+
+            <p className="font-bold">Reham Fagiri, Co-Founder & CEO</p>
           </div>
         </div>
       </div>

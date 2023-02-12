@@ -12,7 +12,7 @@ const Banner = () => {
       <p
         data-aos="zoom-in-up"
         data-aos-duration="2000"
-        className="text-6xl pt-40 font-bold text-neutral-50"
+        className="text-6xl pt-48 font-bold text-neutral-50"
       >
         The easiest way to
         <br /> buy & sell used furniture
